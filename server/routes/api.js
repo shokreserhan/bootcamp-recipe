@@ -6,25 +6,6 @@ const router = express.Router()
 
 let recipes = []
 
-// router.get("/teams/:teamName", function(request, response) {
-//     let teamID = teamToIDs[request.params.teamName]
-//     if (teamID === undefined) {
-//         response.end()
-//     }
-
-//     let teamPlayers = playersData
-//         .filter(player => player.teamId === teamID && player.isActive)
-//         .map(player => {
-//             return {
-//                 firstName: player.firstName,
-//                 lastName: player.lastName,
-//                 jersey: player.jersey,
-//                 pos: player.pos,
-//             }
-//         })
-//     response.send(teamPlayers)
-// })
-
 router.get("/sanity", function(request, response) {
     response.send("OK")
 })
