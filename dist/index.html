@@ -11,6 +11,29 @@
 
 <body>
 
+    <div id="user-Input">
+        <input id="ingredientName" type="text" placeholder="Type ingredient Here:">
+        <button id="searchButton">Search!</button>
+    </div>
+
+    <div id="recipesData"></div>
+
+    <script id="recipes-template" type="text/x-handlebars-template">
+
+        {{#each recipe}}
+        <div class="recipe">
+            <p><a href={{href}} target="_blank">{{title}}</a></p>
+            <img src="{{thumbnail}}">
+            <p>Ingredient:</p> <br>
+            <ul id="ingredient">
+                {{#each ingredients}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+
+    </script>
 
     <script src="/handlebars/dist/handlebars.js"></script>
     <script src="/jquery/dist/jquery.js"></script>

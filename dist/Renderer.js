@@ -1,9 +1,9 @@
-function render(playersData) {
-
-    $("#playersData").empty()
-    let source = $("#player-template").html()
-    let template = Handlebars.compile(source)
-    let newHTML = template({ player: playersData })
-    $("#playersData").append(newHTML)
-
+class Renderer {
+    render(data) {
+        $("#recipesData").empty()
+        let source = $("#recipes-template").html()
+        let template = Handlebars.compile(source)
+        let newHTML = template({ recipe: data })
+        $("#recipesData").append(newHTML)
+    }
 }

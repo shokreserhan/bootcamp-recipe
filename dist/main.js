@@ -1,7 +1,13 @@
-$("#searchButton").on("click", function() {
-    let TeamName = $("#teamName").val()
+let render = new Renderer();
 
-    $.get(`/teams/${TeamName}`, function(result) {
-        render(result)
+$("#searchButton").on("click", function() {
+    let ingredientName = $("#ingredientName").val()
+
+    $.get(`/recipes/${ingredientName}`, function(result) {
+        render.render(result)
     })
+})
+
+$("#recipesData").on("click", "img", function() {
+    alert($(this).closest(".recipe").find("ul").find("li:first-child").text())
 })
